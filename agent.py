@@ -109,7 +109,7 @@ def train_dqn(episode):
             state = next_state
             agent.replay()
             
-            print("episode: {}/{}, score: {}".format(e, episode, score))
+        print("episode: {}/{}, score: {}".format(e, episode, score))
                 
         loss.append(score)
 
