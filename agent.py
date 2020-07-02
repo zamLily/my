@@ -84,7 +84,7 @@ class DQN:
 
         self.model.fit(states, targets_full, epochs=1, verbose=0)
         if self.epsilon > self.epsilon_min:
-            self.epsilon *= self.
+            self.epsilon *= self.epsilon_decay
             
 
 
