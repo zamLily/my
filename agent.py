@@ -39,7 +39,7 @@ class DQN:
         self.batch_size = 64
         self.epsilon_min = .01
         self.lr = 0.001
-        self.epsilon_decay = .996
+        self.epsilon_decay = .9
         self.memory = deque(maxlen=1000000)
         self.model = self.build_model()
 
@@ -88,7 +88,8 @@ class DQN:
 
         self.model.fit(states, targets_full, epochs=1, verbose=0)
         if self.epsilon > self.epsilon_min:
-            self.epsilon *= self.epsilon_decay
+            self.epsilon *= self.
+            
 
 
 def train_dqn(episode):
