@@ -11,7 +11,7 @@ class Myenv(gym.Env):
 
         # [a0, a1, a2, a3]  # 可分别取值 1/2/3   4/5   4/5   4/5
         #self.action_space = spaces.Box(np.array([1, 4, 4, 4]), np.array([3, 5, 5, 5]), dtype=np.int)
-        self.action = np.zeros((1,4))
+        self.action = 0
         self.action_list = [[i,j,l,k] for i in range(1,4) for j in range(4,6) for l in range(4,6) for k in range(4,6)]
 
         # [n0, n1, n2, n3, n4, n5]  A-1-2-3-4-5  共6个状态
