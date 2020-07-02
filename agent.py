@@ -114,7 +114,7 @@ def train_dqn(episode):
         loss.append(score)
 
         # Average score of last 100 episode
-        is_solved = np.mean(loss[-10:])
+        is_solved = np.mean(loss[-100:])
         if is_solved > 0.8:
             print('\n Task Completed! \n')
             break
