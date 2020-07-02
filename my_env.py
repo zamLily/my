@@ -94,10 +94,11 @@ class Myenv(gym.Env):
             print("total_A_in_5s = " + str(self.total_A))
             print("total_B_in_5s = " + str(self.total_B))
             reward = self.total_B / (self.total_A + 1)
-            done = True
+            
         else:
             reward = 0
-            done = False
+        
+        done = False
 
 
         return self.state, reward, done
