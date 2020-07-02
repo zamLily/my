@@ -108,10 +108,9 @@ def train_dqn(episode):
             agent.remember(state, action, reward, next_state, done)
             state = next_state
             agent.replay()
-            if done:
-
-                print("episode: {}/{}, score: {}".format(e, episode, score))
-                break
+            
+            print("episode: {}/{}, score: {}".format(e, episode, score))
+                
         loss.append(score)
 
         # Average score of last 100 episode
