@@ -91,7 +91,7 @@ class DQN:
 def train_dqn(episode):
 
     loss = []
-    agent = DQN(len(env.action), len(env.observation))
+    agent = DQN(len(env.action_list), len(env.observation))
     for e in range(episode):
         state = env.reset()
         state = np.reshape(state, (1, 6))
