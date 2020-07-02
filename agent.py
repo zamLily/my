@@ -96,7 +96,7 @@ def train_dqn(episode):
         state = env.reset()
         state = np.reshape(state, (1, 6))
         score = 0
-        max_steps = 500
+        max_steps = 200
         for i in range(max_steps):
             action = agent.act(state)
             #print("state = " + str(state))
@@ -126,7 +126,7 @@ def main():
 
     print(env.observation)
     print(env.action)
-    episodes = 10
+    episodes = 100
     loss = train_dqn(episodes)
     plt.plot([i+1 for i in range(0, len(loss), 2)], loss[::2])
     plt.show()
