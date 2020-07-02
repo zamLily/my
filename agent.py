@@ -118,8 +118,8 @@ def train_dqn(episode):
         loss.append(score)
 
         # Average score of last 100 episode
-        is_solved = np.mean(loss[-100:])
-        if is_solved > 200:
+        is_solved = np.mean(loss[-10:])
+        if is_solved > 0.8:
             print('\n Task Completed! \n')
             break
         print("Average over last 100 episode: {0:.2f} \n".format(is_solved))
@@ -130,7 +130,7 @@ def main():
 
     print(env.observation)
     print(env.action)
-    episodes = 10
+    episodes = 10000
     loss = train_dqn(episodes)
     plt.plot([i+1 for i in range(0, len(loss), 2)], loss[::2])
     plt.show()
