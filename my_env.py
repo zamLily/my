@@ -28,8 +28,19 @@ class Myenv(gym.Env):
         # 节点A, 1、2、3、4、5的发送数据能力
         self.max_ability = [self.state[0], 20, 40, 60, 30, 10]
 
+    def action_list(self):
+        action_list = []
+        for i in range(1,4):
+            for j in range(4,6):
+                for k in range(4,6):
+                    for l in range(4,6):
+                        action_list.apend([i,j,k,l])
+
+
+
     def step(self, action):
 
+        action = self.action_list[action]
         print("\n")
         print("No." + str(self.count+1) + "s:")
         self.a_send = random.randint(1, 100)

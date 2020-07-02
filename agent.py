@@ -58,11 +58,7 @@ class DQN:
     def act(self, state):
 
         if np.random.rand() <= self.epsilon:
-            a0 = random.randint(1, 3)
-            a1 = random.randint(4, 5)
-            a2 = random.randint(4, 5)
-            a3 = random.randint(4, 5)
-            return [a0, a1, a2, a3]
+            return random.randint(0, 27)
         act_values = self.model.predict(state)
         return np.argmax(act_values[0])
 
