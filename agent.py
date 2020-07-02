@@ -126,7 +126,7 @@ def train_dqn(episode):
     return loss
 
 
-if __name__ == '__main__':
+def main():
 
     print(env.observation)
     print(env.action)
