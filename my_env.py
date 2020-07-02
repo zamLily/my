@@ -97,7 +97,7 @@ class Myenv(gym.Env):
             
         else:
             reward = 0
-        
+       
         done = False
 
 
