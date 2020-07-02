@@ -36,7 +36,7 @@ class DQN:
         self.state_space = state_space
         self.epsilon = 1.0
         self.gamma = .99
-        self.batch_size = 64
+        self.batch_size = 32
         self.epsilon_min = .01
         self.lr = 0.001
         self.epsilon_decay = .9
@@ -91,7 +91,7 @@ class DQN:
 def train_dqn(episode):
 
     loss = []
-    agent = DQN(len(env.action_list), len(env.observation))
+    agent = DQN(len(env.action_list), env.observation.shape[1])
     for e in range(episode):
         state = env.reset()
         state = np.reshape(state, (1, 6))
